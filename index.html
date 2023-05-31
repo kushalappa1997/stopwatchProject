@@ -16,7 +16,7 @@
 	</div>
 <script>
 
-
+// time flow for the seconds from one to 60sec once seconds reaches 60, minutes has to start and seconds has to get reset to  0 and once minutes reaches 60 hour should start 
 let [seconds,minutes,hours]=[0,0,0];
 let displayTime= document.getElementById("displayTime");
 let timmer=null;
@@ -35,6 +35,7 @@ function stopwatch(){
 	let s=seconds <10 ? "0" + seconds:seconds; 
 	displayTime.innerHTML= h + ":" + m+":" + s;
 }
+// 	time interval for starting the watch
 function watchstart(){
 	if(timer!== null)
 	{
@@ -42,9 +43,11 @@ function watchstart(){
 	}
 	timer=setInterval(stopwatch,1000);
 }
+// 	time interval for watch to stop
 function watchstop(){
 	clearInterval(timmer);
 }
+// 	time interval for watch to reset 
 function watchreset(){
 	clearInterval(timmer);
 	[seconds, minutes, hours] = [0,0,0];
